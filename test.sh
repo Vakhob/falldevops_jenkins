@@ -1,2 +1,2 @@
 #!/bin/bash
-eco "we have integrated git"
+echo "we have integrated git"
