@@ -15,8 +15,23 @@ pipeline {
         }
 
             stage('Deploy') {
-            steps {
-                echo 'this is our deployment stage'
+                parallel {
+                    stage('Start Deploy') {
+                        steps {
+                            echo " We are starting docker deployment"
+                }
+                }
+                    stage('Deploying now') {
+                    agent {
+                        docker {
+                            reuseNode true
+                            image 'nginx'
+                    }
+                }
+                        steps {
+                            echo "We have completed Deployment"
+                }
+                }
             }
         }    
     }
