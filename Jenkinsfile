@@ -7,7 +7,7 @@ pipeline {
                   script {
                try
                {
-                   git 'https://github.com/AnikQUPS/learning.git'
+                   git 'https://github.com/Vakhob/falldevops_jenkins.git'
                    sh "python3 python.py"
                }
                catch(err)
